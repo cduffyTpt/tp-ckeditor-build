@@ -45,6 +45,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
-    "postbuild": "tsc --declaration --declarationDir build --stripInternal --emitDeclarationOnly"
+    "postbuild": "tsc --declaration --declarationDir build --stripInternal --emitDeclarationOnly",
+    "serve": "npm run build-dev && http-server ./sample -d false"
   }
 }
