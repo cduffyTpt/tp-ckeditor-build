@@ -7,6 +7,7 @@ import { Autoformat } from '@ckeditor/ckeditor5-autoformat';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
+import { Heading } from '@ckeditor/ckeditor5-heading';
 import { Image, ImageToolbar, ImageUpload } from '@ckeditor/ckeditor5-image';
 import { Indent } from '@ckeditor/ckeditor5-indent';
 import { Link } from '@ckeditor/ckeditor5-link';
@@ -18,18 +19,7 @@ import { Table, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import TpUploadAdapter from './adapters/tp-upload-adapter';
 declare class Editor extends ClassicEditor {
-    static builtinPlugins: (typeof TpUploadAdapter | typeof Autoformat | typeof BlockQuote | typeof Bold | typeof Essentials | typeof Image | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Italic | typeof Link | typeof List | typeof Markdown | typeof Paragraph | typeof PasteFromOffice | typeof Table | typeof TableToolbar | typeof TextTransformation)[];
-    static defaultConfig: {
-        toolbar: {
-            items: string[];
-        };
-        language: string;
-        image: {
-            toolbar: string[];
-        };
-        table: {
-            contentToolbar: string[];
-        };
-    };
+    static builtinPlugins: (typeof TpUploadAdapter | typeof Autoformat | typeof BlockQuote | typeof Bold | typeof Essentials | typeof Image | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Italic | typeof Link | typeof List | typeof Markdown | typeof Paragraph | typeof Heading | typeof PasteFromOffice | typeof Table | typeof TableToolbar | typeof TextTransformation)[];
+    static defaultConfig: any;
 }
 export default Editor;

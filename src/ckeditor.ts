@@ -39,6 +39,7 @@ class Editor extends ClassicEditor {
 		List,
 		Markdown,
 		Paragraph,
+		Heading,
 		PasteFromOffice,
 		Table,
 		TableToolbar,
@@ -46,7 +47,7 @@ class Editor extends ClassicEditor {
 		TpUploadAdapter
 	];
 
-	public static override defaultConfig = {
+	public static override defaultConfig: any = {
 		toolbar: {
 			items: [
 				'heading',
@@ -79,7 +80,8 @@ class Editor extends ClassicEditor {
 				'tableRow',
 				'mergeTableCells'
 			]
-		}
+		},
+		tpUpload: {}
 	};
 }
 
