@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "types": [],
     "lib": [
       "ES2019",
@@ -14,8 +15,9 @@
     "target": "es2019",
     "sourceMap": true,
     "allowJs": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "./src"
