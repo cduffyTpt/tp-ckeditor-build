@@ -1,10 +1,11 @@
 {
   "name": "@transperfect/ckeditor5-custom-build",
-  "author": "CKSource",
+  "author": "cduffyTpt",
   "description": "A custom CKEditor 5 build made by the CKEditor 5 online builder.",
   "version": "1.0.65",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": true,
+  "repository": "https://github.com/cduffyTpt/tp-ckeditor-build.git",
   "main": "./build/ckeditor.js",
   "types": "./build/ckeditor.d.ts",
   "dependencies": {
