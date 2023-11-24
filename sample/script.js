@@ -4,9 +4,9 @@ ClassicEditor
 		// Editor configuration.
 		tpUpload: {
 			serverUrl: 'https://localhost:7235/file',
-			authorization: '',
-			authorizationType: '',
-			fileNamePrefix: ''
+			authorization: 'DFASDSA',
+			authorizationType: 'Bearer',
+			fileNamePrefix: 'file'
 		}
 	})
 	.then(editor => {
