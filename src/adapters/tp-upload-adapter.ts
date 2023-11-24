@@ -1,7 +1,7 @@
 import { FileLoader, FileRepository, UploadAdapter, UploadResponse } from "@ckeditor/ckeditor5-upload";
 import { Subject, throwError } from "rxjs";
 import { takeUntil, switchMap } from "rxjs/operators";
-import { Plugin } from '@ckeditor/ckeditor5-core';
+import { Plugin, Editor } from '@ckeditor/ckeditor5-core';
 import { logWarning } from '@ckeditor/ckeditor5-utils';
 
 import { fromFetch } from 'rxjs/fetch';
@@ -15,7 +15,10 @@ export interface TpUploadAdapterOptions {
 
 class Adapter implements UploadAdapter {
     private aborted$: Subject<void>;
-    constructor(public loader: FileLoader, public options: TpUploadAdapterOptions) {
+    constructor(public loader: FileLoader,
+        private editor: Editor,
+        public options: TpUploadAdapterOptions
+    ) {
         this.aborted$ = new Subject<void>();
     }
 
@@ -24,7 +27,8 @@ class Adapter implements UploadAdapter {
             if (!f) {
                 return;
             }
-            const { fileNamePrefix, authorizationType, authorization, serverUrl } = this.options;
+
+            const { fileNamePrefix, authorizationType, authorization, serverUrl } = this.editor.config.get('tpUpload') as TpUploadAdapterOptions;
 
             const formData = new FormData();
             formData.append(fileNamePrefix, f);
@@ -77,7 +81,7 @@ export default class TpUploadAdapter extends Plugin {
         }
 
         this.editor.plugins.get(FileRepository).createUploadAdapter = loader => {
-            return new Adapter(loader, options);
+            return new Adapter(loader, this.editor, options);
         };
     }
 }
