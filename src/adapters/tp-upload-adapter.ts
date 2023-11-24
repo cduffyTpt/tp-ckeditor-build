@@ -30,6 +30,8 @@ class Adapter implements UploadAdapter {
 
             const { fileNamePrefix, authorizationType, authorization, serverUrl } = this.editor.config.get('tpUpload') as TpUploadAdapterOptions;
 
+            console.info(fileNamePrefix, authorizationType, authorization, serverUrl);
+
             const formData = new FormData();
             formData.append(fileNamePrefix, f);
 
