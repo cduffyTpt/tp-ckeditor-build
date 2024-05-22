@@ -10,7 +10,7 @@ import { Bold, Code, Italic } from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Heading } from '@ckeditor/ckeditor5-heading';
-import { Image, ImageToolbar, ImageUpload } from '@ckeditor/ckeditor5-image';
+import { Image, ImageInsert, ImageToolbar, ImageUpload } from '@ckeditor/ckeditor5-image';
 import { Indent } from '@ckeditor/ckeditor5-indent';
 import { Link } from '@ckeditor/ckeditor5-link';
 import { List } from '@ckeditor/ckeditor5-list';
@@ -34,6 +34,7 @@ class Editor extends ClassicEditor {
 		Image,
 		Code,
 		ImageToolbar,
+		ImageInsert,
 		ImageUpload,
 		Indent,
 		Italic,
@@ -64,7 +65,7 @@ class Editor extends ClassicEditor {
 				'outdent',
 				'indent',
 				'|',
-				'imageUpload',
+				"insertImage",
 				'blockQuote',
 				'insertTable',
 				'undo',
